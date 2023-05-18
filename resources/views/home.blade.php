@@ -5,7 +5,7 @@
 <div class="flex flex-row justify-center">
 
   <div class="card">
-    <div class="card-header">{{ __('Dashboard') }}</div>
+
 
     <div class="card-body">
       @if (session('status'))
