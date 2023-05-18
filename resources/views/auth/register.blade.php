@@ -43,6 +43,22 @@
           @enderror
         </div>
 
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Rolünüz</span>
+          </label>
+          <select class="select select-bordered w-full max-w-xs @error('role') is-invalid @enderror" required name="role" value="{{old('role')}}" autocomplete="role">
+            <option disabled selected>Rol Seçiniz</option>
+            <option value="1">Çalışan</option>
+            <option value="2">İşveren</option>
+          </select>
+          @error('role')
+          <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+          @enderror
+        </div>
+
 
         <div class="form-control">
           <label class="label">
