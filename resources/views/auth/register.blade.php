@@ -26,8 +26,6 @@
         </div>
 
 
-
-
         <div class="form-control">
           <label class="label">
             <span class="label-text">Email</span>
