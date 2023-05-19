@@ -13,7 +13,7 @@
 
   <div>
     <h2 class="text-3xl sm:mx-0 md:mx-9 lg:mx-16 xl:mx-28">Kişisel Bilgileri</h2>
-    <div class="mt-9 grid grid-cols-2 grid-rows-2 gap-x-4 gap-y-24 justify-items-center">
+    <div class="mt-9 grid grid-cols-2 grid-rows-2 gap-y-24 justify-items-center">
       <input id="isim" type="text" placeholder="İsim" class="input input-bordered input-warning w-full max-w-xs" />
       <input type="number" placeholder="Yaş" class="input input-bordered input-warning w-full max-w-xs" />
       <input type="email" placeholder="Email" class="input input-bordered input-warning w-full max-w-xs" />

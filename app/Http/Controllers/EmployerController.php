@@ -23,4 +23,12 @@ class EmployerController extends Controller
         }
         return view('employer.employer');
     }
+
+    public function ilanVer(Request $request)
+    {
+        if ($request->User()->role == 1) {
+            return redirect('/profil');
+        }
+        return view("employer.add_work");
+    }
 }
