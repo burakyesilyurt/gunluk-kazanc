@@ -22,3 +22,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/profil', [App\Http\Controllers\ProfileController::class, 'index'])->name('profil');
+
+Route::get('/isveren', [App\Http\Controllers\EmployerController::class, 'index'])->name('isveren');

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProfileController extends Controller
+class EmployerController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -18,9 +18,9 @@ class ProfileController extends Controller
 
     public function index(Request $request)
     {
-        if ($request->User()->role == 2) {
-            return redirect('/isveren');
+        if ($request->User()->role == 1) {
+            return redirect('/profil');
         }
-        return view('profile.profile');
+        return view('employer.employer');
     }
 }
