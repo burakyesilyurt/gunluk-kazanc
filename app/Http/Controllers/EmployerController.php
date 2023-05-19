@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\works;
+use App\Models\Works;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 
@@ -60,7 +60,7 @@ class EmployerController extends Controller
 
 
 
-        $works = works::create([
+        $works = Works::create([
             'baslik' => $request->baslik,
             'sehir' => $request->sehir,
             'sektor' => $request->sektor,
