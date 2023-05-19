@@ -8,19 +8,33 @@ açıklama
 
 --}}
 
+<form action="{{ route('ilanyolla') }}" method="POST">
+  @csrf
+  <div class="flex items-center flex-col gap-16 mt-24">
+    <input name="baslik" type="text" placeholder="Başlık" class="input input-bordered w-full max-w-xs @error('baslik') is-invalid @enderror" value="{{ old('baslik') }}" required />
+    @error('baslik')
+    <strong>{{ $message }}</strong>
+    @enderror
+    <select name="il" id="il" class="select select-bordered w-full max-w-xs">
+      <option disabled selected>Şehir</option>
+    </select>
+    @error('sehir')
+    <strong>{{ $message }}</strong>
+    @enderror
+    <select name="sektor" id="sektor" class="select select-bordered w-full max-w-xs">
+      <option disabled selected>Sektör</option>
+    </select>
+    @error('sektor')
+    <strong>{{ $message }}</strong>
+    @enderror
+    <textarea name="aciklama" placeholder="Açıklama" class="textarea textarea-bordered textarea-lg w-full max-w-xs" required></textarea>
+    @error('aciklama')
+    <strong>{{ $message }}</strong>
+    @enderror
+    <button type="submit" class="btn w-56">İlan Ekle</button>
 
-<div class="flex items-center flex-col gap-16 mt-24">
-
-  <input type="text" placeholder="Başlık" class="input input-bordered w-full max-w-xs" />
-  <select id="il" class="select select-bordered w-full max-w-xs">
-    <option disabled selected>Şehir</option>
-  </select>
-  <select id="sektor" class="select select-bordered w-full max-w-xs">
-    <option disabled selected>Sektör</option>
-  </select>
-  <textarea placeholder="Açıklama" class="textarea textarea-bordered textarea-lg w-full max-w-xs"></textarea>
-  <button class="btn w-56">İlan Ekle</button>
-</div>
+  </div>
+</form>
 
 <script defer>
   const ilSelect = document.getElementById("il");
@@ -41,7 +55,7 @@ açıklama
     }
 
   };
-  //displayIl();
+  displayIl();
 
 </script>
 
@@ -66,7 +80,7 @@ açıklama
     }
 
   };
-  //displaySektor();
+  displaySektor();
 
 </script>
 

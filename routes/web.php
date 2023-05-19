@@ -26,3 +26,5 @@ Route::get('/profil', [App\Http\Controllers\ProfileController::class, 'index'])-
 Route::get('/isveren', [App\Http\Controllers\EmployerController::class, 'index'])->name('isveren');
 
 Route::get('/ilanver', [App\Http\Controllers\EmployerController::class, 'ilanver'])->name('ilanver');
+
+Route::post('/ilanver', [App\Http\Controllers\EmployerController::class, 'ilanOlustur'])->name('ilanyolla');
