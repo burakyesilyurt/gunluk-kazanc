@@ -1,12 +1,7 @@
 @extends('layouts.app')
 @section('content')
-@extends("employer.layout")
-{{--
-işBaşlık
-açıklama
-şehir
+@include('employer.layout')
 
---}}
 
 <form action="{{ route('ilanyolla') }}" method="POST">
   @csrf
@@ -15,7 +10,7 @@ açıklama
     @error('baslik')
     <strong>{{ $message }}</strong>
     @enderror
-    <select name="il" id="il" class="select select-bordered w-full max-w-xs">
+    <select name="sehir" id="il" class="select select-bordered w-full max-w-xs">
       <option disabled selected>Şehir</option>
     </select>
     @error('sehir')

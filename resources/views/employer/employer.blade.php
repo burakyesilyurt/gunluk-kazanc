@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-@extends("employer.layout")
+@include('employer.layout')
 <div>
 
   <div>
