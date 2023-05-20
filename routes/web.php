@@ -17,6 +17,14 @@ Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index']);
 
 Route::get('/ilanlar', [App\Http\Controllers\WelcomeController::class, 'ilanlar'])->name('ilanlar');
 
+Route::get('/ilanlar/{id}', [App\Http\Controllers\WelcomeController::class, 'ilan']);
+
+Route::get('/ilan-basvur', function () {
+    return redirect('/ilanlar');
+});
+
+Route::post('/ilan-basvur', [App\Http\Controllers\WelcomeController::class, 'basvuruAl'])->name('ilan-basvur');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

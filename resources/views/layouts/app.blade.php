@@ -17,7 +17,7 @@
   {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
   @vite('resources/css/app.css')
 </head>
-<body class="pt-12">
+<body class="pt-16">
   <div id="app">
     <nav class="navbar bg-neutral text-neutral-content fixed z-10 top-0">
       <div class="flex-1">
