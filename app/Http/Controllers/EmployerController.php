@@ -83,4 +83,12 @@ class EmployerController extends Controller
 
         return view('employer.see_works', ["ilanlar" => $ilanlar]);
     }
+
+    public function basvuranlar(Request $request)
+    {
+        $basvurular = DB::select('Select users.name, users.email, works.baslik FROM users, applicants, works WHERE applicants.kullanici_id = users.id AND applicants.ilan_id = works.id AND applicants.firma_id = ?', [$request->User()->id]);
+
+
+        return view('employer.see_appliers', ['basvurular' => $basvurular]);
+    }
 }
