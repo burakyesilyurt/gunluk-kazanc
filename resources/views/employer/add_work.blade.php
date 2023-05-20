@@ -1,6 +1,16 @@
 @extends('layouts.app')
 @section('content')
+@if(session('message'))
+<div id="alertMessage" class="alert flex justify-center alert-success shadow-lg mt-12">
+  <div class="w-96">
+    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+    <span>İlan Eklendi</span>
+  </div>
+</div>
+@endif
 @include('employer.layout')
+
 
 
 <form action="{{ route('ilanyolla') }}" method="POST">
@@ -78,5 +88,17 @@
   displaySektor();
 
 </script>
+
+@if(session('message'))
+<script>
+  const element = document.getElementById("alertMessage");
+
+  setTimeout(() => {
+    element.remove();
+  }, 4000);
+
+</script>
+
+@endif
 
 @endsection

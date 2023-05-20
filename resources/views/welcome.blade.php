@@ -11,7 +11,6 @@
 
 </head>
 <body>
-
   <div class="hero min-h-[65vh] bg-no-repeat bg-cover bg-center
           bg-[url('https://picsum.photos/800/600')]
           xl:bg-[url('https://picsum.photos/1920/1080')]">
@@ -59,7 +58,5 @@
       @endforeach
     </div>
   </div>
-
-
 </body>
 </html>

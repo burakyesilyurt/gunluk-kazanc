@@ -4,6 +4,11 @@
 @include('employer.layout')
 
 <div class="flex items-center gap-7 mt-16 flex-col">
+  @if(count($ilanlar) == 0)
+  <div class="h-[60vh] flex items-center">
+    <h1 class="text-5xl">İlanınız Bulunmamakta</h1>
+  </div>
+  @endif
   @foreach ($ilanlar as $ilan)
 
   <div class="card bg-neutral text-neutral-content shadow-xl w-2/6">

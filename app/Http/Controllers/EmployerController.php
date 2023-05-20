@@ -70,7 +70,7 @@ class EmployerController extends Controller
         ]);
 
         $works->save();
-        return redirect('ilanver');
+        return redirect('ilanver')->with('message', true);
     }
 
     public function ilanlarim(Request $request)
