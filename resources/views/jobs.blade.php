@@ -17,7 +17,7 @@
 
   <div class="card px-7 py-4 max-w-4xl w-72 sm:w-96 md:w-2/4 lg:w-2/5   bg-neutral text-neutral-content">
     <div class="flex justify-between">
-      <h2 class="text-xl">{{$work->baslik}}</h2>
+      <h2 class="text-xl font-semibold">{{$work->baslik}}</h2>
       <span>{{\Carbon\Carbon::parse($work->created_at)->diffForHumans()}}</span>
     </div>
     <div class="py-4">
