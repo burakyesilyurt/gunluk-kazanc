@@ -1,39 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="pt-12">
 
-  <div class="flex justify-center">
-    <div class="avatar">
-      <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-        <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-      </div>
-    </div>
-  </div>
 
-  <div>
-    <h2 class="text-3xl sm:mx-0 md:mx-9 lg:mx-16 xl:mx-28">Kişisel Bilgileri</h2>
-    <div class="mt-9 grid grid-cols-2 grid-rows-2 gap-y-24 justify-items-center">
-      <input id="isim" type="text" placeholder="İsim" class="input input-bordered input-warning w-full max-w-xs" />
-      <input type="number" placeholder="Yaş" class="input input-bordered input-warning w-full max-w-xs" />
-      <input type="email" placeholder="Email" class="input input-bordered input-warning w-full max-w-xs" />
-      <input type="tel" placeholder="Telefon" class="input input-bordered input-warning w-full max-w-xs" />
-    </div>
-  </div>
-  <div class="divider mt-12 mb-8"></div>
-  <div class="mt-4">
-    <h2 class="text-3xl sm:mx-0 md:mx-9 lg:mx-16 xl:mx-28">Eğitim Bilgileri</h2>
-    <div class="mt-9 grid grid-cols-2 grid-rows-2 gap-x-4 gap-y-24 justify-items-center">
-      <select id="uniSelect" class="select select-bordered select-warning w-full max-w-xs">
+
+<div class="my-14">
+  <form action="{{route('profil')}}" method="POST">
+    @csrf
+
+    <div class="flex flex-col items-center gap-14">
+      <h1 class="text-3xl">Kişisel Bilgiler</h1>
+      <input name="isim" id="isim" type="text" value="{{$user->isim ?? ''}}" placeholder="İsim" class="input input-bordered input-warning w-full max-w-xs" required />
+      @error('ismi')
+      <strong>{{ $message }}</strong>
+      @enderror
+      <input name="yas" type="number" placeholder="Yaş" value="{{$user->yas ?? ''}}" class="input input-bordered input-warning w-full max-w-xs" required />
+      @error('yas')
+      <strong>{{ $message }}</strong>
+      @enderror
+      <input name="tel" type="tel" placeholder="Telefon" value="{{$user->telefon ?? ''}}" class="input input-bordered input-warning w-full max-w-xs" required />
+      @error('tel')
+      <strong>{{ $message }}</strong>
+      @enderror
+      <select name="universite" id="uniSelect" class="select select-bordered select-warning w-full max-w-xs">
         <option disabled selected>Üniversite Seçiniz</option>
       </select>
-      <input type="text" placeholder="Bölüm" class="input input-bordered input-warning w-full max-w-xs" />
-      <input type="email" placeholder="Email" class="input input-bordered input-warning w-full max-w-xs" />
-      <input type="tel" placeholder="Telefon" class="input input-bordered input-warning w-full max-w-xs" />
+      @error('universite')
+      <strong>{{ $message }}</strong>
+      @enderror
+      <input name="bolum" type="text" placeholder="Bölüm" value="{{$user->bolum ?? ''}}" class="input input-bordered input-warning w-full max-w-xs" />
+      @error('bolum')
+      <strong>{{ $message }}</strong>
+      @enderror
+      <button type="submit" class="btn btn-lg w-48">Kaydet</button>
     </div>
-  </div>
-
-
+  </form>
 </div>
 
 
@@ -58,7 +59,7 @@
       }
     }
   };
-  //displayOption();
+  displayOption();
 
 </script>
 @endsection

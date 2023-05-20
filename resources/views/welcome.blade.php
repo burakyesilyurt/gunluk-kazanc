@@ -36,7 +36,13 @@
   </div>
   <div class="mt-12">
     <div class="ml-44 mb-12">
+      @if ($works->isEmpty())
+      <span class="text-3xl font-medium">Güncel İş İlanı Bulunmamakta</span>
+      @else
       <span class="text-3xl font-medium">En Güncel İlanlar</span>
+      @endif
+
+
     </div>
     <div class="grid sm:grid-cols-1 gap-y-11 justify-items-center xl:grid-cols-3">
       @foreach ($works as $work )
