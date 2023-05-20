@@ -8,8 +8,13 @@
       <div class="flex flex-col">
         <form action="{{ route('ilan-basvur') }}" method="post">
           @csrf
-          <input hidden value="{{$ilan->id}}" name="id" type="text">
+          <input hidden value="{{$ilan->id}}" name="id">
+          <input hidden value="{{$ilan->firma_id}}" name="firma_id">
+          @if($mesaj)
+          <button disabled='disabled' class="btn btn-success btn-sm text-base">Başvuruldu</button>
+          @else
           <button type="submit" class="btn btn-success btn-sm text-base">Başvur</button>
+          @endif
         </form>
         <span>Başvuru sayısı: {{$ilan->basvuru_sayisi}}</span>
       </div>

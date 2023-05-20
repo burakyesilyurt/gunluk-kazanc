@@ -14,7 +14,6 @@
 <div class="flex flex-col items-center justify-center my-12 gap-16 ">
 
   @foreach ($works as $work)
-
   <div class="card px-7 py-4 max-w-4xl w-72 sm:w-96 md:w-2/4 lg:w-2/5   bg-neutral text-neutral-content">
     <div class="flex justify-between">
       <h2 class="text-xl font-semibold">{{$work->baslik}}</h2>
