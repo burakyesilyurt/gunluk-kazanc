@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <div class="hero min-h-screen bg-no-repeat bg-cover bg-center
+  <div class="hero min-h-[65vh] bg-no-repeat bg-cover bg-center
           bg-[url('https://picsum.photos/800/600')]
           xl:bg-[url('https://picsum.photos/1920/1080')]">
     <div class="hero-overlay bg-opacity-60"></div>
@@ -35,88 +35,22 @@
       </div>
     </div>
   </div>
-
-
-  <input type="checkbox" id="kayit" class="modal-toggle" />
-  <div class="modal">
-    <div class="modal-box">
-      <label for="kayit" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-      <form action="" method="POST">
-        <div class="flex flex-col gap-4">
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Ad</span>
-            </label>
-            <label class="input-group">
-              <span class="md:w-1/6">Ad</span>
-              <input type="text" name="ad" placeholder="Adınız" class="input input-bordered w-3/4" required />
-            </label>
-          </div>
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Soyad</span>
-            </label>
-            <label class="input-group">
-              <span class="md:w-1/6">Soyad</span>
-              <input type="text" name="soyad" placeholder="Soyadınız" class="input input-bordered w-3/4" required />
-            </label>
-          </div>
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Email</span>
-            </label>
-            <label class="input-group">
-              <span class="md:w-1/6">Email</span>
-              <input type="email" name="email" placeholder="info@site.com" class="input input-bordered w-3/4" required />
-            </label>
-          </div>
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Şifre</span>
-            </label>
-            <label class="input-group">
-              <span class="md:w-1/6">Şifre</span>
-              <input type="password" name="sifre" class="input input-bordered w-3/4" required />
-            </label>
-          </div>
-          <div class="modal-action justify-center">
-            <button type="submit" class="btn">Kayıt Ol</button>
+  <div class="mt-12">
+    <div class="grid sm:grid-cols-1 gap-y-11 justify-items-center xl:grid-cols-3">
+      @foreach ($works as $work )
+      <div class="card w-96 bg-gray-900 shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title">{{$work->baslik}}</h2>
+          <p class="overflow-hidden max-h-24">{{$work->aciklama}}</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">{{$work->sehir}}</button>
           </div>
         </div>
-      </form>
+      </div>
+      @endforeach
     </div>
   </div>
 
-  <input type="checkbox" id="giris" class="modal-toggle" />
-  <div class="modal">
-    <div class="modal-box">
-      <label for="giris" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-      <form action="" method="POST">
-        <div class="flex flex-col gap-4">
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Email</span>
-            </label>
-            <label class="input-group">
-              <span class="md:w-1/6">Email</span>
-              <input type="email" name="email" placeholder="info@site.com" class="input input-bordered w-3/4" required />
-            </label>
-          </div>
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Şifre</span>
-            </label>
-            <label class="input-group">
-              <span class="md:w-1/6">Şifre</span>
-              <input type="password" name="sifre" class="input input-bordered w-3/4" required />
-            </label>
-          </div>
-          <div class="modal-action justify-center">
-            <button type="submit" class="btn">Giriş Yap</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
+
 </body>
 </html>
