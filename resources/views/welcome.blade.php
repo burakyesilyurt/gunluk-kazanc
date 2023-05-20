@@ -38,12 +38,13 @@
   <div class="mt-12">
     <div class="grid sm:grid-cols-1 gap-y-11 justify-items-center xl:grid-cols-3">
       @foreach ($works as $work )
-      <div class="card w-96 bg-gray-900 shadow-xl">
+      <div class="card w-96 bg-gray-900 shadow-xl 2xl:w-[32rem]">
         <div class="card-body">
           <h2 class="card-title">{{$work->baslik}}</h2>
           <p class="overflow-hidden max-h-24">{{$work->aciklama}}</p>
           <div class="card-actions justify-end">
             <button class="btn btn-primary">{{$work->sehir}}</button>
+            <a href="{{ route('ilanlar') }}" class="btn">İlanlara git</a>
           </div>
         </div>
       </div>

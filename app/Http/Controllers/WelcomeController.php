@@ -14,4 +14,10 @@ class WelcomeController extends Controller
 
         return view('welcome', ['works' => $works]);
     }
+
+    public function ilanlar(Request $request)
+    {
+
+        return view('jobs');
+    }
 }
