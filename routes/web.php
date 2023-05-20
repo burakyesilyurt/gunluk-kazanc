@@ -41,3 +41,5 @@ Route::post('/ilanver', [App\Http\Controllers\EmployerController::class, 'ilanOl
 Route::get('/ilanlarim', [App\Http\Controllers\EmployerController::class, 'ilanlarim'])->name('ilanlarim');
 
 Route::get('/basvuranlar', [App\Http\Controllers\EmployerController::class, 'basvuranlar'])->name('basvuranlar');
+
+Route::get('/profil/{id}', [App\Http\Controllers\EmployerController::class, 'calisanProfil']);

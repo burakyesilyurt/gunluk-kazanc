@@ -15,6 +15,7 @@
           <th>İsim</th>
           <th>Email</th>
           <th>Başvurulan İlan</th>
+          <th>Profile Git</th>
         </tr>
       </thead>
       <tbody>
@@ -23,11 +24,13 @@
         @foreach ($basvurular as $basvuru)
 
 
+
         <tr>
           <th>{{$loop->index + 1}}</th>
           <td>{{$basvuru->name}}</td>
           <td>{{$basvuru->email}}</td>
           <td>{{$basvuru->baslik}}</td>
+          <td><a href="/profil/{{$basvuru->id}}" class="btn">Profili Gör</a></td>
         </tr>
         @endforeach
         <!-- row 2 -->

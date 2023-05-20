@@ -86,9 +86,24 @@ class EmployerController extends Controller
 
     public function basvuranlar(Request $request)
     {
-        $basvurular = DB::select('Select users.name, users.email, works.baslik FROM users, applicants, works WHERE applicants.kullanici_id = users.id AND applicants.ilan_id = works.id AND applicants.firma_id = ?', [$request->User()->id]);
+        if ($request->User()->role == 1) {
+            return redirect('/profil');
+        }
+
+        $basvurular = DB::select('Select users.id, users.name, users.email, works.baslik FROM users, applicants, works WHERE applicants.kullanici_id = users.id AND applicants.ilan_id = works.id AND applicants.firma_id = ?', [$request->User()->id]);
 
 
         return view('employer.see_appliers', ['basvurular' => $basvurular]);
+    }
+
+    public function calisanProfil($id, Request $request)
+    {
+        if ($request->User()->role == 1) {
+            return redirect('/profil');
+        }
+
+        $employee = DB::table('employees')->where('user_id', $id)->first();
+
+        return view('employer.employee_profile', ['employee' => $employee]);
     }
 }
