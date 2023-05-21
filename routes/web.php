@@ -30,6 +30,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/profil', [App\Http\Controllers\ProfileController::class, 'index'])->name('profil');
+
 Route::post('/profil', [App\Http\Controllers\ProfileController::class, 'profilOlustur']);
 
 Route::get('/isveren', [App\Http\Controllers\EmployerController::class, 'index'])->name('isveren');
@@ -37,9 +38,12 @@ Route::get('/isveren', [App\Http\Controllers\EmployerController::class, 'index']
 Route::get('/ilanver', [App\Http\Controllers\EmployerController::class, 'ilanver'])->name('ilanver');
 
 Route::post('/ilanver', [App\Http\Controllers\EmployerController::class, 'ilanOlustur'])->name('ilanyolla');
+Route::post('/ilan-sil/{id}', [App\Http\Controllers\EmployerController::class, 'ilanSil'])->name('ilan-sil');
+
 
 Route::get('/ilanlarim', [App\Http\Controllers\EmployerController::class, 'ilanlarim'])->name('ilanlarim');
 
 Route::get('/basvuranlar', [App\Http\Controllers\EmployerController::class, 'basvuranlar'])->name('basvuranlar');
+
 
 Route::get('/profil/{id}', [App\Http\Controllers\EmployerController::class, 'calisanProfil']);

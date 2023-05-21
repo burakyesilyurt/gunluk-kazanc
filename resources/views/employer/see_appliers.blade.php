@@ -21,7 +21,7 @@
       <tbody>
 
         <!-- row 1 -->
-        @foreach ($basvurular as $basvuru)
+        @foreach (array_reverse($basvurular) as $basvuru)
 
 
 

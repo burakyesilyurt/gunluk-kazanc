@@ -14,15 +14,19 @@ return new class extends Migration
         Schema::create('applicants', function (Blueprint $table) {
             $table->id();
 
+            // $table->unsignedBigInteger('firma_id');
+            // $table->foreign('firma_id')->references('firma_id')->on('works');
+
+            // $table->unsignedBigInteger('ilan_id');
+            // $table->foreign('ilan_id')->references('id')->on('works');
+
+
+            // $table->unsignedBigInteger('kullanici_id');
+            // $table->foreign('kullanici_id')->references('id')->on('users');
+
             $table->unsignedBigInteger('firma_id');
-            $table->foreign('firma_id')->references('firma_id')->on('works');
-
             $table->unsignedBigInteger('ilan_id');
-            $table->foreign('ilan_id')->references('id')->on('works');
-
-
             $table->unsignedBigInteger('kullanici_id');
-            $table->foreign('kullanici_id')->references('id')->on('users');
 
             $table->timestamps();
         });
