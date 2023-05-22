@@ -16,9 +16,9 @@
           xl:bg-[url('https://picsum.photos/1920/1080')]">
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="hero-content text-center text-neutral-content">
-      <div class="max-w-md">
+      <div class="max-w-4xl">
         <h1 class="mb-5 text-5xl font-bold">Hoş Geldiniz!</h1>
-        <p class="mb-5">
+        <p class="mb-5 text-2xl">
 
           İşverenler ve iş arayanlar arasında bağlantı kurmanıza yardımcı olan bir platformuz. Yetenekli iş arayanlarla iletişim kurabilir, iş ilanlarınızı yayınlayabilir ve ekibinizi güçlendirebilirsiniz. Aynı şekilde, farklı sektörlerdeki iş ilanlarını keşfedebilir, başvurularınızı gönderebilir ve kariyerinizi ilerletecek fırsatları yakalayabilirsiniz. Size özel profilinizi oluşturun ve iş dünyasında adınızı duyurun.
 

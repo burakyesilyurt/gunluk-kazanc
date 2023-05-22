@@ -23,7 +23,18 @@ class WelcomeController extends Controller
 
     public function ilanlar(Request $request)
     {
-        $works = Works::orderBy('created_at', 'DESC')->get();
+
+
+        if ($request->query('baslik')) {
+
+            $works = Works::where('baslik', 'LIKE', '%' . $request->query('baslik') . '%')->get();
+        } elseif ($request->query('sehir') || $request->query('sektor')) {
+            $works = Works::where('sehir', 'LIKE', '%' . $request->query('sehir') . '%')->where('sektor', 'LIKE', '%' . $request->query('sektor') . '%')->get();
+        } else {
+            $works = Works::orderBy('created_at', 'DESC')->get();
+        }
+
+
 
         return view('jobs', ['works' => $works]);
     }
