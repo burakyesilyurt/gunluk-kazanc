@@ -98,9 +98,7 @@ class EmployerController extends Controller
 
     public function calisanProfil($id, Request $request)
     {
-        if ($request->User()->role == 1) {
-            return redirect('/profil');
-        }
+
 
         $employee = DB::table('employees')->where('user_id', $id)->first();
 

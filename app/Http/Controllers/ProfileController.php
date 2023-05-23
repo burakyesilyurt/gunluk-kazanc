@@ -56,7 +56,9 @@ class ProfileController extends Controller
                 'universite' => $request->universite,
                 'bolum' => $request->bolum,
             ]);
-            return redirect('/');
+
+
+            return redirect('/profil/' . $request->User()->id);
         }
 
 
@@ -73,6 +75,6 @@ class ProfileController extends Controller
 
         $employee->save();
 
-        return redirect('/');
+        return redirect('/profil/' . $request->User()->id);
     }
 }
