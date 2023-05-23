@@ -41,7 +41,7 @@ class ProfileController extends Controller
 
         $request->validate([
             'isim' => 'required|string|max:255',
-            'yas' => 'required|numeric|max:100',
+            'yas' => 'required|numeric|min:18|max:100',
             'tel' => 'required|min:8|max:11|regex:/^([0-9\s\-\+\(\)]*)$/',
             'universite' => 'nullable|string',
             'bolum' => 'nullable|string'
@@ -57,10 +57,8 @@ class ProfileController extends Controller
                 'bolum' => $request->bolum,
             ]);
 
-
             return redirect('/profil/' . $request->User()->id);
         }
-
 
 
         $employee = Employee::create([
