@@ -21,7 +21,7 @@
   <div id="app">
     <nav class="navbar bg-neutral text-neutral-content fixed z-10 top-0">
       <div class="flex-1">
-        <a class="btn btn-ghost normal-case text-xl" href="{{ url('/') }}">
+        <a class="btn btn-ghost normal-case text-xl" href="{{ url('/ilanlar') }}">
           {{ config('app.name', 'Laravel') }}
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
