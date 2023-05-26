@@ -1,0 +1,49 @@
+@extends('layouts.app')
+@section('content')
+{{-- @include('admin.admin-side-panel') --}}
+
+<div class="h-[90vh] flex justify-center flex-col">
+  <div class="flex justify-center my-12">
+    <div class="border border-rose-500">
+      <div class="stats stats-vertical lg:stats-horizontal shadow">
+        <div class="stat">
+          <div class="stat-title">İlanlar</div>
+          <div class="stat-value">31K</div>
+          <div class="stat-desc">Jan 1st - Feb 1st</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-title">Kullanıcılar</div>
+          <div class="stat-value">4,200</div>
+          <div class="stat-desc">↗︎ 400 (22%)</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-title">Firmalar</div>
+          <div class="stat-value">1,200</div>
+          <div class="stat-desc">↘︎ 90 (14%)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-center gap-12">
+    <div class="card w-96 bg-slate-700 text-white shadow-xl">
+      <div class="card-body ">
+        <h2 class="card-title text-4xl flex justify-center h-full border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 cursor-pointer">İlanlar</h2>
+      </div>
+    </div>
+    <div class="card w-96 bg-slate-700 text-white shadow-xl">
+      <div class="card-body ">
+        <h2 class="card-title text-4xl flex justify-center h-full border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 cursor-pointer">Kullanıcılar</h2>
+      </div>
+    </div>
+    <div class="card w-96 bg-slate-700 text-white shadow-xl">
+      <div class="card-body ">
+        <h2 class="card-title text-4xl flex justify-center h-full border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 cursor-pointer">Firmalar</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+@endsection

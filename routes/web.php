@@ -47,3 +47,6 @@ Route::get('/basvuranlar', [App\Http\Controllers\EmployerController::class, 'bas
 
 
 Route::get('/profil/{id}', [App\Http\Controllers\EmployerController::class, 'calisanProfil']);
+
+
+Route::get('/admin-panel', [App\Http\Controllers\AdminController::class, 'index']);
