@@ -17,11 +17,9 @@
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="hero-content text-center text-neutral-content">
       <div class="max-w-4xl">
-        <h1 class="mb-5 text-5xl font-bold">Hoş Geldiniz!</h1>
-        <p class="mb-5 text-2xl">
-
+        <h1 class="mb-5 text-5xl font-bold text-slate-300">Hoş Geldiniz!</h1>
+        <p class="mb-5 text-2xl text-slate-300">
           İşverenler ve iş arayanlar arasında bağlantı kurmanıza yardımcı olan bir platformuz. Yetenekli iş arayanlarla iletişim kurabilir, iş ilanlarınızı yayınlayabilir ve ekibinizi güçlendirebilirsiniz. Aynı şekilde, farklı sektörlerdeki iş ilanlarını keşfedebilir, başvurularınızı gönderebilir ve kariyerinizi ilerletecek fırsatları yakalayabilirsiniz. Size özel profilinizi oluşturun ve iş dünyasında adınızı duyurun.
-
           Hemen kaydolun ve iş dünyasında başarıya doğru adım atın!</p>
         <div class="flex gap-7 justify-center mt-12">
           <a href="{{ url('/register') }}">
@@ -29,7 +27,6 @@
           <a href="{{ url('/login') }}">
             <button for="giris" class="btn">Giriş Yap</button>
           </a>
-
         </div>
       </div>
     </div>
@@ -55,7 +52,7 @@
               <span>Başvuru Sayısı {{$work->basvuru_sayisi}}</span>
             </div>
             <div>
-              <span class="btn btn-primary">{{$work->sehir}}</span>
+              <span class="btn btn-primary cursor-default">{{$work->sehir}}</span>
               <a href="{{ route('ilanlar') }}" class="btn">İlanlara git</a>
             </div>
           </div>

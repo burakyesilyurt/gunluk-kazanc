@@ -20,8 +20,9 @@
           <td>{{$employer->name}}</td>
           <td>{{$employer->email}}</td>
           <td>
-            <form action="{{route('ilan-sil',$employer->id)}}" method="POST">
+            <form action="{{route('admin-kullanici',$employer->id)}}" method="POST">
               @csrf
+              @method('DELETE')
               <button type="submit">
                 <img src="/delete-button.svg" class="to-slate-50" height="25" width="25" alt="trashsvg">
               </button>

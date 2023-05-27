@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   <meta charset="utf-8">
@@ -16,6 +17,7 @@
   <!-- Scripts -->
   {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
   @vite('resources/css/app.css')
+
 </head>
 <body class="pt-16">
   <div id="app">
@@ -75,4 +77,5 @@
     </main>
   </div>
 </body>
+
 </html>

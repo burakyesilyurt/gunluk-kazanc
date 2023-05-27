@@ -48,7 +48,6 @@ class AdminController extends Controller
 
     public function kullaniciSil($id)
     {
-
         User::destroy($id);
         return redirect()->back();
     }

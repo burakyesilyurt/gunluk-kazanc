@@ -2,7 +2,7 @@
 @section('content')
 
 @if(session('message'))
-<div id="alertMessage" class="alert flex justify-center alert-success shadow-lg mt-12">
+<div id="alertMessage" class="alert flex justify-center alert-success shadow-lg mt-12 z-10">
   <div class="w-96">
     <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -79,11 +79,8 @@
       <a href="/ilanlar/{{$work->id}}" class="btn btn-success">İlana Git</a>
       @endguest
     </div>
-
   </div>
-
   @endforeach
-
 </div>
 
 <script defer>
@@ -118,7 +115,6 @@
     return jsonData;
 
   }
-
 
   const displaySektor = async () => {
     const sektorler = await getJSONData();

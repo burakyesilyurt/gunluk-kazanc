@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index']);
+Route::get('/deneme', [App\Http\Controllers\WelcomeController::class, 'deneme']);
 
 Route::get('/ilanlar', [App\Http\Controllers\WelcomeController::class, 'ilanlar'])->name('ilanlar');
 
