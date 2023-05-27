@@ -20,7 +20,12 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('admin.main');
+
+        return view('admin.main', [
+            'ilanlar' => Works::count(),
+            'kullanicilar' => User::where('role', 1)->count(),
+            'isverenler' => User::where('role', 2)->count()
+        ]);
     }
     public function ilanlar()
     {
@@ -39,5 +44,12 @@ class AdminController extends Controller
         //silme yapılacak
         $employers = User::where('role', 2)->orderBy('created_at', 'desc')->get(['id', 'name', 'email']);
         return view('admin.employers', ['employers' => $employers]);
+    }
+
+    public function kullaniciSil($id)
+    {
+
+        User::destroy($id);
+        return redirect()->back();
     }
 }

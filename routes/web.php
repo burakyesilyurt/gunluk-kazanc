@@ -38,7 +38,11 @@ Route::get('/isveren', [App\Http\Controllers\EmployerController::class, 'index']
 Route::get('/ilanver', [App\Http\Controllers\EmployerController::class, 'ilanver'])->name('ilanver');
 
 Route::post('/ilanver', [App\Http\Controllers\EmployerController::class, 'ilanOlustur'])->name('ilanyolla');
+Route::get('/ilan-sil/{id}', function () {
+    return redirect('/ilanlar');
+});
 Route::post('/ilan-sil/{id}', [App\Http\Controllers\EmployerController::class, 'ilanSil'])->name('ilan-sil');
+
 
 
 Route::get('/ilanlarim', [App\Http\Controllers\EmployerController::class, 'ilanlarim'])->name('ilanlarim');
@@ -55,4 +59,5 @@ Route::prefix('/admin-panel')->group(function () {
     Route::get('/ilanlar', [App\Http\Controllers\AdminController::class, 'ilanlar'])->name('admin-ilan');
     Route::get('/kullanicilar', [App\Http\Controllers\AdminController::class, 'kullanicilar'])->name('admin-kullanicilar');
     Route::get('/firmalar', [App\Http\Controllers\AdminController::class, 'firmalar'])->name('admin-firmalar');
+    Route::delete('/{id}', [App\Http\Controllers\AdminController::class, 'kullaniciSil'])->name('admin-kullanici');
 });

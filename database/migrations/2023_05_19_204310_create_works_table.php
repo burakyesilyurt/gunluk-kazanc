@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('works', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('firma_id');
-            $table->foreign('firma_id')->references('id')->on('users');
+            $table->foreign('firma_id')->references('id')->on('users')->onDelete('cascade');;
             $table->string("baslik");
             $table->string("sehir");
             $table->string("sektor");

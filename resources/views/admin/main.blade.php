@@ -7,21 +7,18 @@
     <div class="border border-rose-500">
       <div class="stats stats-vertical lg:stats-horizontal shadow">
         <div class="stat">
+
           <div class="stat-title">İlanlar</div>
-          <div class="stat-value">31K</div>
-          <div class="stat-desc">Jan 1st - Feb 1st</div>
+          <div class="stat-value m-auto">{{$ilanlar}}</div>
         </div>
 
         <div class="stat">
           <div class="stat-title">Kullanıcılar</div>
-          <div class="stat-value">4,200</div>
-          <div class="stat-desc">↗︎ 400 (22%)</div>
+          <div class="stat-value m-auto">{{$kullanicilar}}</div>
         </div>
-
         <div class="stat">
           <div class="stat-title">Firmalar</div>
-          <div class="stat-value">1,200</div>
-          <div class="stat-desc">↘︎ 90 (14%)</div>
+          <div class="stat-value m-auto">{{$isverenler}}</div>
         </div>
       </div>
     </div>
