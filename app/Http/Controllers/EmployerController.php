@@ -109,6 +109,7 @@ class EmployerController extends Controller
     {
         Applicants::where('ilan_id', $id)->delete();
         Works::where('id', $id)->delete();
-        return redirect('/ilanlarim');
+        // return redirect('/ilanlarim');
+        return redirect()->back();
     }
 }

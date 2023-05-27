@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Works;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -29,10 +30,14 @@ class AdminController extends Controller
 
     public function kullanicilar()
     {
-        return view('admin.ilanlar');
+        //silme yapılacak
+        $users = User::where('role', 1)->orderBy('created_at', 'desc')->get(['id', 'name', 'email']);
+        return view('admin.users', ['users' => $users]);
     }
     public function firmalar()
     {
-        return view('admin.ilanlar');
+        //silme yapılacak
+        $employers = User::where('role', 2)->orderBy('created_at', 'desc')->get(['id', 'name', 'email']);
+        return view('admin.employers', ['employers' => $employers]);
     }
 }
