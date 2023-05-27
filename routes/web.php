@@ -49,4 +49,10 @@ Route::get('/basvuranlar', [App\Http\Controllers\EmployerController::class, 'bas
 Route::get('/profil/{id}', [App\Http\Controllers\EmployerController::class, 'calisanProfil']);
 
 
-Route::get('/admin-panel', [App\Http\Controllers\AdminController::class, 'index']);
+Route::get('/admin-panel', [App\Http\Controllers\AdminController::class, 'index'])->name('admin-panel');
+
+Route::prefix('/admin-panel')->group(function () {
+    Route::get('/ilanlar', [App\Http\Controllers\AdminController::class, 'ilanlar'])->name('admin-ilan');
+    Route::get('/kullanicilar', [App\Http\Controllers\AdminController::class, 'kullanicilar'])->name('admin-kullanicilar');
+    Route::get('/firmalar', [App\Http\Controllers\AdminController::class, 'firmalar'])->name('admin-firmalar');
+});

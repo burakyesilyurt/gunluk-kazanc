@@ -27,20 +27,26 @@
     </div>
   </div>
 
-  <div class="flex justify-center gap-12">
+  <div class="flex justify-center gap-12 flex-col items-center lg:flex-row">
     <div class="card w-96 bg-slate-700 text-white shadow-xl">
       <div class="card-body ">
-        <h2 class="card-title text-4xl flex justify-center h-full border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 cursor-pointer">İlanlar</h2>
+        <a href="{{route('admin-ilan')}}">
+          <h2 class="card-title text-4xl flex justify-center h-full border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 cursor-pointer">İlanlar</h2>
+        </a>
       </div>
     </div>
     <div class="card w-96 bg-slate-700 text-white shadow-xl">
       <div class="card-body ">
-        <h2 class="card-title text-4xl flex justify-center h-full border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 cursor-pointer">Kullanıcılar</h2>
+        <a href="{{route('admin-kullanicilar')}}">
+          <h2 class="card-title text-4xl flex justify-center h-full border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 cursor-pointer">Kullanıcılar</h2>
+        </a>
       </div>
     </div>
     <div class="card w-96 bg-slate-700 text-white shadow-xl">
       <div class="card-body ">
-        <h2 class="card-title text-4xl flex justify-center h-full border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 cursor-pointer">Firmalar</h2>
+        <a href="{{route('admin-firmalar')}}">
+          <h2 class="card-title text-4xl flex justify-center h-full border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110 cursor-pointer">Firmalar</h2>
+        </a>
       </div>
     </div>
   </div>
