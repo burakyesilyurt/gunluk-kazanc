@@ -25,14 +25,6 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        //dd(Auth::User()->role);
-        //dd($request->User()->name);
-        // if ($request->User()->role == 1) {
-        //     dd("role1");
-        // } else {
-        //     dd("role2");
-        // }
-
         return view('home');
     }
 }

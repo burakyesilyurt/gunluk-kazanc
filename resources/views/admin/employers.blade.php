@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Isverenler')
 @section('content')
 
 <h1 class="text-4xl flex justify-center my-12">İşverenler</h1>

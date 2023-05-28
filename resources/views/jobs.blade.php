@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Ilanlar')
 @section('content')
 
 @if(session('message'))

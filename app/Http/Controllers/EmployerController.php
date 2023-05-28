@@ -32,7 +32,7 @@ class EmployerController extends Controller
         if ($request->User()->role == 1) {
             return redirect('/profil');
         }
-        return view('employer.employer');
+        return view('home');
     }
 
     public function ilanVer(Request $request)

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Ilanlar')
 @section('content')
 <h1 class="text-4xl flex justify-center my-12">İlanlar</h1>
 <div class="my-16 flex justify-center">

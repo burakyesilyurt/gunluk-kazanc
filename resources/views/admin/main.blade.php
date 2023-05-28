@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Admin Paneli')
 @section('content')
 {{-- @include('admin.admin-side-panel') --}}
 

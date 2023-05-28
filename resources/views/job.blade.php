@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', $ilan->baslik)
 @section('content')
 
 <div class="flex flex-col items-center mt-24 mb-12 ">

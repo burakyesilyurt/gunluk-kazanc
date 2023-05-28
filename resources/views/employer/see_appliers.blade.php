@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Başvuranlar')
 @section('content')
 @include('employer.layout')
 

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Ana Sayfa')
 @section('content')
 
 <div class="flex flex-row justify-center">

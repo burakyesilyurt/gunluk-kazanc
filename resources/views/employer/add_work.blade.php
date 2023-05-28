@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Ilan Ver')
 @section('content')
 @if(session('message'))
 <div id="alertMessage" class="alert flex justify-center alert-success shadow-lg mt-12">

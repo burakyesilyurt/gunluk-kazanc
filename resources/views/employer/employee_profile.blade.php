@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', "$employee->isim'ın Profili")
 @section('content')
 
 <div class="flex justify-center">
