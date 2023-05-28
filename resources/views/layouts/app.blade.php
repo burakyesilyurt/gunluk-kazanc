@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html data-theme="dark" lang="{{ str_replace('_', '-', app()->getLocale()) }} ">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,8 +16,8 @@
 
   <!-- Scripts -->
   {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
-  @vite('resources/css/app.css')
-
+  {{-- @vite('resources/css/app.css') --}}
+  @vite('resources/js/app.js')
 </head>
 <body class="pt-16 flex flex-col min-h-screen">
   <div id="app">
@@ -40,25 +40,25 @@
           @guest
           @if (Route::has('login'))
           <li>
-            <a href="{{ route('login') }}">{{ __('Login') }}</a>
+            <a href="{{ route('login') }}">{{ __('Giriş Yap') }}</a>
           </li>
           @endif
 
           @if (Route::has('register'))
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+            <a class="nav-link" href="{{ route('register') }}">{{ __('Kayıt Ol') }}</a>
           </li>
           @endif
           @else
           <li>
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/home" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/home" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
               {{ Auth::user()->name }}
             </a>
 
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
+                {{ __('Çıkış Yap') }}
               </a>
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -72,7 +72,7 @@
       </div>
     </nav>
 
-    <main>
+    <main class="mb-14">
       @yield('content')
     </main>
   </div>

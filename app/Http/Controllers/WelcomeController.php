@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Models\Works;
 use App\Models\Applicants;
@@ -25,9 +26,10 @@ class WelcomeController extends Controller
     {
 
         if ($request->query('baslik')) {
-            $works = Works::where('baslik', 'LIKE', '%' . $request->query('baslik') . '%')->get();
+            dd($request->query('baslik'));
+            $works = Works::where('baslik', 'LIKE', '%' . $request->query('baslik') . '%')->paginate(10);
         } elseif ($request->query('sehir') || $request->query('sektor')) {
-            $works = Works::where('sehir', 'LIKE', '%' . $request->query('sehir') . '%')->where('sektor', 'LIKE', '%' . $request->query('sektor') . '%')->get();
+            $works = Works::where('sehir', 'LIKE', '%' . $request->query('sehir') . '%')->where('sektor', 'LIKE', '%' . $request->query('sektor') . '%')->paginate(10);
         } else {
             //$works = Works::orderBy('created_at', 'DESC')->get();
             $works = Works::orderBy('created_at', 'DESC')->paginate(10);

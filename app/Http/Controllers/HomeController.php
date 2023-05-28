@@ -25,6 +25,9 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
+        if ($request->User()->role == 3) {
+            return redirect('/admin-panel');
+        }
         return view('home');
     }
 }

@@ -34,22 +34,18 @@
         </label>
         <div class="divider"></div>
       </div>
-
-
-      <div>
-        <form action="/ilanlar" method="GET">
-
+      <form action="/ilanlar" method="GET">
+        <div>
           <select name="sehir" id="il" class="select select-bordered select-lg w-full max-w-xs">
             <option disabled selected>Şehir</option>
           </select>
-      </div>
-      <div>
-        <select name="sektor" id="sektor" class="select select-bordered select-lg w-full max-w-xs">
-          <option disabled selected>Sektör</option>
-        </select>
-      </div>
-
-      <button type="submit" class="btn">Ara</button>
+        </div>
+        <div class="py-8">
+          <select name="sektor" id="sektor" class="select select-bordered select-lg w-full max-w-xs">
+            <option disabled selected>Sektör</option>
+          </select>
+        </div>
+        <button type="submit" class="btn px-12">Ara</button>
       </form>
     </div>
   </div>
@@ -66,7 +62,7 @@
       <h2 class="text-xl font-semibold">{{$work->baslik}}</h2>
       <span>{{\Carbon\Carbon::parse($work->created_at)->diffForHumans()}}</span>
     </div>
-    <div class="py-4">
+    <div class="py-10">
       <p class="max-h-48 overflow-hidden">{{$work->aciklama}}</p>
     </div>
     <div class="flex justify-between items-center pt-4">
