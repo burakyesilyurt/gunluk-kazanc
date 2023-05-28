@@ -84,6 +84,10 @@
   @endforeach
 </div>
 
+<div class="mx-auto pb-14 w-4/5">
+  {{$works->links()}}
+</div>
+
 <script defer>
   const ilSelect = document.getElementById("il");
   async function getJSONData() {

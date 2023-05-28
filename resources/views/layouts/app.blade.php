@@ -19,7 +19,7 @@
   @vite('resources/css/app.css')
 
 </head>
-<body class="pt-16">
+<body class="pt-16 flex flex-col min-h-screen">
   <div id="app">
     <nav class="navbar bg-neutral text-neutral-content fixed z-10 top-0">
       <div class="flex-1">
@@ -76,6 +76,12 @@
       @yield('content')
     </main>
   </div>
+
+  <footer class="footer footer-center p-4 bg-base-300 text-base-content fixed -bottom-2">
+    <div>
+      <p>Copyright © 2023 - All right reserved by Gunluk Kazanc</p>
+    </div>
+  </footer>
 </body>
 
 </html>
