@@ -20,14 +20,6 @@ class WelcomeController extends Controller
 
         return view('welcome', ['works' => $works]);
     }
-    public function deneme(Request $request)
-    {
-
-        return view('deneme');
-    }
-
-
-
 
     public function ilanlar(Request $request)
     {
