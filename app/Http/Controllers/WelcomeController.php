@@ -26,7 +26,6 @@ class WelcomeController extends Controller
     {
 
         if ($request->query('baslik')) {
-            dd($request->query('baslik'));
             $works = Works::where('baslik', 'LIKE', '%' . $request->query('baslik') . '%')->paginate(10);
         } elseif ($request->query('sehir') || $request->query('sektor')) {
             $works = Works::where('sehir', 'LIKE', '%' . $request->query('sehir') . '%')->where('sektor', 'LIKE', '%' . $request->query('sektor') . '%')->paginate(10);
@@ -34,7 +33,6 @@ class WelcomeController extends Controller
             //$works = Works::orderBy('created_at', 'DESC')->get();
             $works = Works::orderBy('created_at', 'DESC')->paginate(10);
         }
-
 
         return view('jobs', ['works' => $works]);
     }
