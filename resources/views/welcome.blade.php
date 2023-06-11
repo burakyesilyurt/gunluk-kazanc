@@ -20,7 +20,7 @@
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-neutral-content">
             <div class="max-w-4xl">
-                <h1 class="mb-5 text-5xl font-bold text-slate-300">Hoş Geldiniz!</h1>
+                <h1 class="mb-5 text-5xl font-bold text-slate-300">Hoş Geldiniz!!</h1>
                 <p class="mb-5 text-2xl text-slate-300">
                     İşverenler ve iş arayanlar arasında bağlantı kurmanıza yardımcı olan bir platformuz. Yetenekli iş
                     arayanlarla iletişim kurabilir, iş ilanlarınızı yayınlayabilir ve ekibinizi güçlendirebilirsiniz.
