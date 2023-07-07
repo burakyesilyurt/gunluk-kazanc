@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Applicants;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Works;
@@ -19,6 +20,15 @@ class Jobs extends Controller
         $jobs = Works::orderBy('created_at', 'DESC')->get();
         if ($jobs->count() > 0) {
             return response()->json(['status' => 200, 'jobs' => $jobs], 200);
+        }
+        return response()->json(['status' => 404, 'message' => "iş ilanı bulunamamakta"], 404);
+    }
+
+    public function getJob($id)
+    {
+        $job = Works::find($id);
+        if ($job) {
+            return response()->json(['status' => 200, 'job' => $job], 200);
         }
         return response()->json(['status' => 404, 'message' => "iş ilanı bulunamamakta"], 404);
     }
@@ -60,6 +70,23 @@ class Jobs extends Controller
             'status' => 500,
             'message' => 'bir hata oluştu'
         ], 500);
+    }
+
+    public function removeJob($id)
+    {
+        $work = Works::find($id);
+        if ($work) {
+            Applicants::where('ilan_id', $id)->delete();
+            Works::where('id', $id)->delete();
+            return response()->json([
+                'status' => 200,
+                'message' => 'İlan silindi'
+            ], 200);
+        }
+        return response()->json([
+            'status' => 404,
+            'message' => 'ilan bulunamadı'
+        ], 404);
     }
 
     public function login(Request $request)

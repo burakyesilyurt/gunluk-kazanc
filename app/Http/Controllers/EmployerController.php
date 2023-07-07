@@ -49,17 +49,12 @@ class EmployerController extends Controller
             return redirect('/profil');
         }
 
-
-
         $request->validate([
             'baslik' => 'required|string|max:255',
             'sehir' => 'required|string|max:255',
             'sektor' => 'required|string|max:255',
             'aciklama' => 'required|string',
         ]);
-
-
-
 
         $works = Works::create([
             'baslik' => $request->baslik,
