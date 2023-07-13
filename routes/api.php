@@ -29,3 +29,4 @@ Route::post('/register', [App\Http\Controllers\Api\Jobs::class, 'register']);
 Route::get('/appliers/{id}', [App\Http\Controllers\Api\Employer::class, 'appliers']);
 Route::get('/employerWorks/{firmaId}', [App\Http\Controllers\Api\Employer::class, 'getEmployerJobs']);
 Route::post('/createProfile', [App\Http\Controllers\Api\Applicants::class, 'createProfile']);
+Route::get('/profile/{userId}', [App\Http\Controllers\Api\Applicants::class, 'profileInfo']);

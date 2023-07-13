@@ -63,4 +63,19 @@ class Applicants extends Controller
             'message' => 'bir hata oluştu'
         ], 500);
     }
+
+    function profileInfo($userId)
+    {
+        if (Employee::where('user_id', $userId)->exists()) {
+            $user = Employee::where('user_id', $userId)->first();
+            return response()->json([
+                'status' => 200,
+                'user' => $user
+            ], 200);
+        }
+        return response()->json([
+            'status' => 404,
+            'message' => 'kullanıcı profili bulunamadı'
+        ], 404);
+    }
 }
