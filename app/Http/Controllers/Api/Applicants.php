@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Employee;
+use App\Models\Works;
+use App\Models\Applicants as ApplicantsModel;
 
 class Applicants extends Controller
 {
@@ -77,5 +79,20 @@ class Applicants extends Controller
             'status' => 404,
             'message' => 'kullanıcı profili bulunamadı'
         ], 404);
+    }
+
+    function applyJob(Request $request)
+    {
+        $applicants = ApplicantsModel::create([
+            'firma_id' => $request->firmaId,
+            'ilan_id' => $request->ilanId,
+            'kullanici_id' => $request->userId
+        ]);
+        $applicants->save();
+        Works::where('id', $request->ilanId)->increment('basvuru_sayisi', 1);
+
+        return response()->json([
+            'status' => 200,
+        ], 200);
     }
 }
